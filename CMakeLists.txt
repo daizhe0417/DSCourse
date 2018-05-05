@@ -28,3 +28,9 @@ add_executable(Ch1-7 Ch1/Ch1-7.cpp)
 ###################################
 # 线性表的顺序存储——面向过程实现
 add_executable(Ch2-1 Ch2/Ch2-1.cpp)
+# 线性表的顺序存储——面向对象实现
+add_executable(Ch2-2 Ch2/Ch2-2.cpp)
+# 线性表的链接存储——面向过程实现
+add_executable(Ch2-3 Ch2/Ch2-3.cpp)
+# 线性表的链接存储——面向对象实现-带头指针
+add_executable(Ch2-4 Ch2/Ch2-4.cpp)
