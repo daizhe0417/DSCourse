@@ -25,3 +25,7 @@
 * [第二章](http://59.47.179.191:9106/index.php/s/tgqx9sN63KKD3bC)
 	* [附件1](http://59.47.179.191:9106/index.php/s/iaBCkaRjedBJQA3)
 	* [附件2](http://59.47.179.191:9106/index.php/s/mvYM5jnjgA0VqA9)
+
+## 实验
+* [实验一](http://59.47.179.191:9106/index.php/s/UaSnxeHtpXkK6JR)
+* [实验二](http://59.47.179.191:9106/index.php/s/bLdAeAZ0ifJI7bb)
