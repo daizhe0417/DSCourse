@@ -34,3 +34,21 @@ add_executable(Ch2-2 Ch2/Ch2-2.cpp)
 add_executable(Ch2-3 Ch2/Ch2-3.cpp)
 # 线性表的链接存储——面向对象实现-带头指针
 add_executable(Ch2-4 Ch2/Ch2-4.cpp)
+
+###################################
+############# 第三章 ###############
+###################################
+# 栈的顺序存储
+add_executable(Ch3-1 Ch3/Ch3-1.cpp)
+# 栈的链接存储
+add_executable(Ch3-2 Ch3/Ch3-2.cpp)
+# 栈的应用——键盘输出逆序输出
+add_executable(Ch3-3 Ch3/Ch3-3.cpp)
+# 栈的应用——语法检查
+add_executable(Ch3-4 Ch3/Ch3-4.cpp)
+# 栈的应用——运算表达式求值
+add_executable(Ch3-5 Ch3/Ch3-5.cpp)
+# 栈与递归——递归方法计算阶乘
+add_executable(Ch3-6 Ch3/Ch3-6.cpp)
+# 栈与递归——汉诺塔
+add_executable(Ch3-7 Ch3/Ch3-7.cpp)
