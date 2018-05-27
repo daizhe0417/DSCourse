@@ -65,7 +65,7 @@ add_executable(Ch3-9 Ch3/Ch3-9.cpp)
 add_executable(Ch4-1 Ch4/Ch4-1.cpp)
 # 二叉搜索树
 add_executable(Ch4-2 Ch4/Ch4-2.cpp)
-# 二叉搜索树
+# 堆
 add_executable(Ch4-3 Ch4/Ch4-3.cpp)
 # 哈夫曼树
 add_executable(Ch4-4 Ch4/Ch4-4.cpp)
