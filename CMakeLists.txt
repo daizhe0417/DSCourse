@@ -9,7 +9,7 @@ add_executable(DSCourse main.cpp)
 ############# 第一章 ###############
 ###################################
 # 计算机程序的基本逻辑结构
-add_executable(Ch1-1 Ch1/Ch1-1.cpp)
+add_executable(Ch1-1 Ch1/Ch1-1.cpp expr/aa.cpp homework/hm2-4.cpp)
 # 抽象数据类型——矩阵
 add_executable(Ch1-2 Ch1/Ch1-2.cpp)
 # 抽象数据类型——矩阵——面向对象实现
@@ -52,3 +52,25 @@ add_executable(Ch3-5 Ch3/Ch3-5.cpp)
 add_executable(Ch3-6 Ch3/Ch3-6.cpp)
 # 栈与递归——汉诺塔
 add_executable(Ch3-7 Ch3/Ch3-7.cpp)
+# 栈与递归——迷宫问题递归解法
+add_executable(Ch3-8 Ch3/Ch3-8.cpp)
+# 栈与递归——迷宫问题非递归解法
+add_executable(Ch3-9 Ch3/Ch3-9.cpp)
+
+
+###################################
+############# 第四章 ###############
+###################################
+# 二叉树-链接存储
+add_executable(Ch4-1 Ch4/Ch4-1.cpp)
+# 二叉搜索树
+add_executable(Ch4-2 Ch4/Ch4-2.cpp)
+# 二叉搜索树
+add_executable(Ch4-3 Ch4/Ch4-3.cpp)
+# 哈夫曼树
+add_executable(Ch4-4 Ch4/Ch4-4.cpp)
+
+###################################
+############## 作业 ################
+###################################
+add_executable(hm2-4 homework/hm2-4.cpp)
