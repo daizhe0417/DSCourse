@@ -2,7 +2,7 @@
 
 using namespace std;
 //
-// 抽象数据类型——矩
+// 抽象数据类型--矩阵
 //
 struct RECtnagle {
     float length;

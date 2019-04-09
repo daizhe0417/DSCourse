@@ -1,12 +1,17 @@
 #include<iostream>
-
+#include"../common/Student.cpp"
 #define MAX_SIZE 10
+
+//
+// 线性表的顺序存储--面向过程实现
+//
 
 // 通用元素类型声明
 using namespace std;
 
-// 线性表的元素类型
+// 线性表的元素类型的通用定义，也可以是复杂数据类型，比如一个Student类型
 typedef int ElemType;
+//typedef Student ElemType;
 
 // 线性表结构体
 struct List {
@@ -22,7 +27,7 @@ void InitList(List &L, int size);
 
 void ClearList(List &L);                                //清空线性表L
 int LenthList(List &L);                                 //返回L的长度
-bool isEmpty(List &L);                                  //判断L是否为空
+bool IsEmpty(List &L);                                  //判断L是否为空
 ElemType GetList(List &L, int pos);                     //返回L中第pos个元素的值
 void TraverseList(List &L);                             //遍历输出L中的所有元素
 bool FindList(List &L, ElemType &item);                 //从L中查找并返回元素
@@ -113,7 +118,7 @@ int LenthList(List &L) {
 }
 
 // 4. 判断L是否为空
-bool isEmpty(List &L) {
+bool IsEmpty(List &L) {
     return L.size == 0;
 }
 

@@ -32,9 +32,9 @@ int LenthList(LNode *HL);
 
 bool EmptyList(LNode *HL);
 
-ElemType GetList(LNode *HL, int pos);
-
 void TraverseList(LNode *HL);
+
+ElemType GetList(LNode *HL, int pos);
 
 bool FindList(LNode *HL, ElemType &item);
 
@@ -150,6 +150,9 @@ int main() {
     TraverseList(p);
     InsertList(p, 1, 0);
     TraverseList(p);
+    int x=1;
+    DeleteList(p, x, 0);
+    TraverseList(p);
     return 0;
 }
 
@@ -196,7 +199,16 @@ bool EmptyList(LNode *HL) {
     return HL == NULL;
 }
 
-//5. 得到单链表中第pos个结点中的元素
+//5. 遍历一个单链表
+void TraverseList(LNode *HL) {
+    while (HL != NULL) {        //从表头开始依次输出每个结点的值
+        cout << HL->data << " ";
+        HL = HL->next;
+    }
+    cout << endl;
+}
+
+//6. 得到单链表中第pos个结点中的元素
 ElemType GetList(LNode *HL, int pos) {
     if (HL == NULL) {
         cerr << "链表HL为空" << endl;
@@ -222,14 +234,6 @@ ElemType GetList(LNode *HL, int pos) {
     }
 }
 
-//6. 遍历一个单链表
-void TraverseList(LNode *HL) {
-    while (HL != NULL) {        //从表头开始依次输出每个结点的值
-        cout << HL->data << " ";
-        HL = HL->next;
-    }
-    cout << endl;
-}
 
 //7. 从单链表中查找具有给定值的第一个元素
 bool FindList(LNode *HL, ElemType &item) {

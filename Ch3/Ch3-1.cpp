@@ -19,9 +19,9 @@ struct Stack {
 };
 
 //1. 初始化栈S为空
-void InitStack(Stack &S) {
+void InitStack(Stack &S,int maxSize){
     //初始设置栈空间大小为10
-    S.MaxSize = 10;
+    S.MaxSize = maxSize;
     //动态存储空间分配
     S.stack = new ElemType[S.MaxSize];
     if (!S.stack) {
@@ -30,6 +30,10 @@ void InitStack(Stack &S) {
     }
     //初始置栈为空
     S.top = -1;
+}
+
+void InitStack(Stack &S) {
+    InitStack(S,MAX_SIZE);
 }
 
 //2. 元素item进栈，即插入到栈顶
@@ -53,10 +57,14 @@ ElemType Pop(Stack &S) {
         cerr << "栈空，退出运行!" << endl;
         exit(1);
     }
-    //栈顶指针减1表示退栈
+    ////栈顶指针减1表示退栈
+    //S.top--;
+    ////返回原栈顶元素的值
+    //return S.stack[S.top + 1];
+
+    ElemType item=S.stack[S.top];
     S.top--;
-    //返回原栈顶元素的值
-    return S.stack[S.top + 1];
+    return item;
 }
 
 //4. 读取栈顶元素的值
@@ -87,7 +95,7 @@ void ClearStack(Stack &S) {
 
 int main() {
     Stack s;
-    InitStack(s);
+    InitStack(s,7);
     int a[5]={3,7,1,8,5};
     for(int i=0;i<5;i++){
         Push(s,a[i]);

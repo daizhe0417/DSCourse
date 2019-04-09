@@ -1,5 +1,6 @@
 //
 // Created by DaiZhe on 2018/5/7.
+// 语法检查:括号匹配
 //
 
 #include<iostream>
@@ -113,10 +114,16 @@ int BracketsCheck(char *fname) {
                 Push(a, ch);
                 break;
             case '}':
-                if (EmptyStack(a)) return 0;
+                if (EmptyStack(a)) {
+                    cout << "少{" << endl;
+                    return 0;
+                }
                 if (Peek(a) == '{')
                     Pop(a);
-                else return 0;
+                else {
+                    cout << "少{" << endl;
+                    return 0;
+                }
                 break;
             case ']':
                 if (EmptyStack(a)) return 0;
@@ -132,7 +139,13 @@ int BracketsCheck(char *fname) {
         }
     }
     if (EmptyStack(a)) return 1;
-    else return 0;
+    else{
+        cout << "多左括号:" << endl;
+        while (!EmptyStack(a)){
+            cout << Pop(a)<<"  " << endl;
+        }
+        return 0;
+    }
 }
 
 int main() {
@@ -143,6 +156,5 @@ int main() {
     } else {
         cout << fileName << "文件中括号匹配不正确" << endl;
     }
-
     return 0;
 }

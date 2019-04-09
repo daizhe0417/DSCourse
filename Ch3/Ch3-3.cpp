@@ -1,5 +1,6 @@
 //
 // Created by DaiZhe on 2018/5/7.
+// 键盘输入逆序输出
 //
 
 #include<iostream>
@@ -85,23 +86,26 @@ void ClearStack(Stack &S) {
     S.MaxSize = 0;
 }
 
+
 int main() {
     Stack s;
     InitStack(s);
     int x;
+    cout << "请输入字符：" << endl;
     cin >> x;
     while (x != -1) {// -1作为终止输入的标志
         Push(s, x);
         cin >> x;
     }
 
+
     //for(int i=0;i<10;i++){([{   ])}
 
     while (!EmptyStack(s)) {
         cout << Pop(s) << "---";
+
+        //ClearStack(s);
+
+        return 0;
     }
-
-    ClearStack(s);
-
-    return 0;
 }

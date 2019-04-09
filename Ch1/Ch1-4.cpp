@@ -2,7 +2,7 @@
 
 using namespace std;
 //
-// 算法实例——求n个元素中的最大值
+// 算法实例--求n个元素中的最大值
 //
 
 int main() {

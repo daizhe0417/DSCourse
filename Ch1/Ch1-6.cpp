@@ -4,7 +4,7 @@
 using namespace std;
 //
 // Created by DaiZhe on 2018/3/24.
-// 时间复杂度——矩阵相加
+// 时间复杂度--矩阵相加
 //
 
 void MatrixAdd(int a[MS][MS], int b[MS][MS], int c[MS][MS], int n) {

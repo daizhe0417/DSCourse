@@ -4,7 +4,7 @@
 using namespace std;
 //
 // Created by DaiZhe on 2018/3/24.
-// 时间复杂度——简单选择排序
+// 时间复杂度--简单选择排序
 //
 
 void SelectSort(int b[], int n) {
