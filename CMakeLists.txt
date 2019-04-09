@@ -9,7 +9,7 @@ add_executable(DSCourse main.cpp)
 ############# 第一章 ###############
 ###################################
 # 计算机程序的基本逻辑结构
-add_executable(Ch1-1 Ch1/Ch1-1.cpp expr/aa.cpp homework/hm2-4.cpp)
+add_executable(Ch1-1 Ch1/Ch1-1.cpp)
 # 抽象数据类型——矩阵
 add_executable(Ch1-2 Ch1/Ch1-2.cpp)
 # 抽象数据类型——矩阵——面向对象实现
@@ -70,7 +70,40 @@ add_executable(Ch4-3 Ch4/Ch4-3.cpp)
 # 哈夫曼树
 add_executable(Ch4-4 Ch4/Ch4-4.cpp)
 
+
+###################################
+############# 第五章 ###############
+###################################
+# 图的存储——邻接矩阵
+add_executable(Ch5-1 Ch5/Ch5-1.h Ch5/Ch5-1.cpp)
+# 图的存储——邻接表
+add_executable(Ch5-2 Ch5/Ch5-2.cpp Ch5/Ch5-2.h)
+# 图的存储——边集数组
+add_executable(Ch5-3 Ch5/Ch5-3.cpp Ch5/Ch5-3.h)
+# 图的遍历
+add_executable(Ch5-4 Ch5/Ch5-4.cpp Ch5/Ch5-1.h Ch5/Ch5-2.h Ch5/Ch5-4.h)
+
+# 图的最小生成树
+add_executable(Ch5-5 Ch5/Ch5-5.cpp Ch5/Ch5-1.h Ch5/Ch5-3.h)
+
+# 最短路径-Dijkstra算法
+add_executable(Ch5-6 Ch5/Ch5-6.cpp Ch5/Ch5-1.h Ch5/Ch5-3.h)
+
+
+###################################
+############# 第六章 ###############
+###################################
+# 顺序查找
+add_executable(Ch6-1 Ch6/Ch6-1.cpp)
+
 ###################################
 ############## 作业 ################
 ###################################
+add_executable(hm1-3 homework/hm1-3.cpp)
+add_executable(hm1-4 homework/hm1-4.cpp)
 add_executable(hm2-4 homework/hm2-4.cpp)
+
+###################################
+############## 实验 ################
+###################################
+add_executable(expr1 expr/aa.cpp)

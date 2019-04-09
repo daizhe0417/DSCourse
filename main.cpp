@@ -1,8 +1,13 @@
 #include <iostream>
-
+using namespace std;
 int main() {
+    
+    int i;
+    cout << i << endl;
 
     int a[10];
+
+    cout << a[10] << endl;
 
     a[0]=12;
     std::cout << a[0] << std::endl;
@@ -17,12 +22,3 @@ struct LNote{
     ElemType data;
     LNote* next;
 };
-
-ADT RECtangle is
-        Data:
-float length,width;
-Operations:
-void InitRectangle(struct Rectangle& r,float,len,float wid);
-float Circumference(struct Rectangle& r);
-float Area(struct Rectangle& r);
-end RECtangle
