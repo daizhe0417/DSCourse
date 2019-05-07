@@ -56,7 +56,10 @@ add_executable(Ch3-7 Ch3/Ch3-7.cpp)
 add_executable(Ch3-8 Ch3/Ch3-8.cpp)
 # 栈与递归——迷宫问题非递归解法
 add_executable(Ch3-9 Ch3/Ch3-9.cpp)
-
+# 队列的顺序存储
+add_executable(Ch3-10 Ch3/Ch3-10.cpp)
+# 队列的链接存储
+add_executable(Ch3-11 Ch3/Ch3-11.cpp)
 
 ###################################
 ############# 第四章 ###############
@@ -106,4 +109,4 @@ add_executable(hm2-4 homework/hm2-4.cpp)
 ###################################
 ############## 实验 ################
 ###################################
-add_executable(expr1 expr/aa.cpp)
+#add_executable(expr1 expr/aa.cpp)

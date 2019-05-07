@@ -26,16 +26,16 @@ void CreateBTree(BTreeNode *&BT, char *a)
 //根据字符串a所给出的用广义表表示的二叉树建立对应的存储结构
 {
     const int MaxSize = 10;     //栈数组长度要大于等于二叉树的深度减1
-    BTreeNode *s[MaxSize];    //s数组作为存储根结点指针的栈使用
+    BTreeNode *s[MaxSize];      //s数组作为存储根结点指针的栈使用
     int top = -1;               //top作为栈顶指针，初值为-1，表示空栈
     BT = NULL;                  //把树根指针置为空，即从空树开始
-    BTreeNode *p;             //定义p为指向二叉树结点的指针
-    int k;                    //用k作为处理结点的左子树和右子树的标记，
+    BTreeNode *p;               //定义p为指向二叉树结点的指针
+    int k;                      //用k作为处理结点的左子树和右子树的标记，
     //k=1处理左子树，k=2处理右子树
     int i = 0;                  //用i扫描数组a中存储的二叉树广义表字符串
-    while (a[i]) {     //每循环一次处理一个字符，直到扫描到字符串结束符'\0'为止
+    while (a[i]) {              //每循环一次处理一个字符，直到扫描到字符串结束符'\0'为止
         switch (a[i]) {
-            case ' ':  //对空格不作任何处理
+            case ' ':           //对空格不作任何处理
                 break;
             case '(':
                 if (top == MaxSize - 1) {
@@ -60,10 +60,14 @@ void CreateBTree(BTreeNode *&BT, char *a)
                 p = new BTreeNode;
                 p->data = a[i];
                 p->left = p->right = NULL;
-                if (BT == NULL) BT = p;   //作为根结点插入
-                else {
-                    if (k == 1) s[top]->left = p;   //作为左孩子插入
-                    else s[top]->right = p;      //作为右孩子插入
+                if (BT == NULL) {
+                    BT = p;   //作为根结点插入
+                } else {
+                    if (k == 1) {
+                        s[top]->left = p;       //作为左孩子插入
+                    } else {
+                        s[top]->right = p;      //作为右孩子插入
+                    }
                 }
         }  //switch end
         i++;  //为扫描下一个字符修改i值

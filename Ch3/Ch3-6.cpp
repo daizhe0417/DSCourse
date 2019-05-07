@@ -7,6 +7,7 @@
 using namespace std;
 
 long f(int n) {
+    cout << "f"<<n << endl;
     if (n == 0) {
         return 1;
     } else {
