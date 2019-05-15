@@ -1,12 +1,13 @@
 //
 // Created by DaiZhe on 2018/5/21.
+// 二叉树及其基本操作
 //
 #include<iostream>
 
 using namespace std;
 
 // 通用元素类型声明
-typedef int ElemType;
+typedef char ElemType;
 
 struct BTreeNode {
     ElemType data;      //值域
@@ -112,16 +113,16 @@ bool FindBTree(BTreeNode *BT, ElemType &x) {
 }
 
 //6. 输出二叉树
-void PrintBTree(BTreeNode *BT) {       //输出二叉树的广义表表示
-    if (BT != NULL) {                  //树为空时结束递归，否则执行如下操作
-        cout << BT->data;             //输出根结点的值
+void PrintBTree(BTreeNode *BT) {            //输出二叉树的广义表表示
+    if (BT != NULL) {                       //树为空时结束递归，否则执行如下操作
+        cout << BT->data;                   //输出根结点的值
         if (BT->left != NULL || BT->right != NULL) {
-            cout << '(';              //输出左括号
-            PrintBTree(BT->left);   //输出左子树
+            cout << '(';                    //输出左括号
+            PrintBTree(BT->left);           //输出左子树
             if (BT->right != NULL)
-                cout << ',';    //若右子树不为空则首先输出逗号分隔符
-            PrintBTree(BT->right);  //输出右子树
-            cout << ')';              //输出右括号
+                cout << ',';                //若右子树不为空则首先输出逗号分隔符
+            PrintBTree(BT->right);          //输出右子树
+            cout << ')';                    //输出右括号
         }
     }
 }
