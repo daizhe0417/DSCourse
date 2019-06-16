@@ -80,6 +80,6 @@ void PrintArray(edgeset GE,int n,int k1,int k2)
             }
         }
     }
-    cout<<')'<<endl;
+    cout<<'}'<<endl;
 }
 #endif //DSCOURSE_CH5_3_H

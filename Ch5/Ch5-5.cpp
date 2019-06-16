@@ -1,5 +1,6 @@
 //
 // Created by DaiZhe on 2018/6/4.
+// 图的应用：最小生成树
 //
 #include <iostream>
 #include <strstream>
@@ -21,12 +22,13 @@ typedef int adjmatrix[MaxVertexNum][MaxVertexNum];  // 二维数组，邻接矩�
 #include "Ch5-3.h"
 
 void printCT(edgeset CT) {
+    cout << "{";
     for (int i = 0; i < MaxEdgeNum; i++) {
         if (CT[i].fromvex != -1) {
             cout << "(" << CT[i].fromvex << "," << CT[i].endvex << ")" << CT[i].weight << ",";
         }
     }
-    cout << endl;
+    cout << "}" << endl;
 }
 
 //1.普里姆算法产生图的最小生成树
@@ -56,7 +58,7 @@ void Prim(adjmatrix GA, edgeset CT, int n)
             }
         cout << "更新前" << endl;
         printCT(CT);
-        //把最短边对调到第k-1下标位置
+        //把最短边所在下标m对调到第k-1下标位置，这样下一次循环时，就从新的k-1开始就可以了
         edge temp = CT[k - 1];
         CT[k - 1] = CT[m];
         CT[m] = temp;
@@ -86,6 +88,7 @@ void printVars(bool **s, edgeset CT, int n) {
         }
         cout << endl;
     }
+    cout << "CT:";
     printCT(CT);
 }
 
@@ -111,7 +114,7 @@ void Kruskal(edgeset GE, edgeset CT, int n)
     printVars(s, CT, n);
     //进行n-1次循环，得到最小生成树中的n-1条边
     while (k < n) {
-        cout << "第" << k << "次:(" << GE[d].fromvex << "," << GE[d].endvex << endl;
+        cout << "第" << k << "次:(" << GE[d].fromvex << "," << GE[d].endvex << ")" << endl;
         printVars(s, CT, n);
         for (i = 0; i < n; i++) {  //求出边GE[d]的两个顶点所在集合的序号m1和m2
             if (s[i][GE[d].fromvex] == true) m1 = i;
@@ -137,8 +140,7 @@ void Kruskal(edgeset GE, edgeset CT, int n)
 
 
 int main() {
-
-    // 普里姆算法
+    cout << "普里姆算法:" << endl;
     adjmatrix GA;
     vexlist vx;
     InitMatrix(GA, 1);
@@ -146,9 +148,13 @@ int main() {
     CreateMatrix(GA, 7, s, 0, 1);
     PrintMatrix(GA, 7, 0, 1);
 
-    for (int i = 0; i < 6; i++) {
-        for (int j = 0; j < 6; j++) {
-            cout << GA[i][j] << "\t";
+    for (int i = 0; i < 7; i++) {
+        for (int j = 0; j < 7; j++) {
+            if (GA[i][j] == MaxValue) {
+                cout << "N" << "\t";
+            } else {
+                cout << GA[i][j] << "\t";
+            }
         }
         cout << endl;
     }
@@ -156,9 +162,10 @@ int main() {
     edgeset CT;
     InitArray(CT);
     Prim(GA, CT, 7);
+    cout << "Prim算法结果：" << endl;
     PrintArray(CT, 7, 0, 0);
 
-    // 克鲁斯卡尔算法
+    cout << "克鲁斯卡尔算法" << endl;
     edgeset GB;
     InitArray(GB);
     s = "{(0,1)18,(0,4)4,(0,5)23,(1,2)5,(1,3)8,(1,5)12,(2,3)10,(3,4)20,(3,5)15,(4,5)25}";
@@ -167,6 +174,7 @@ int main() {
 
     InitArray(CT);
     Kruskal(GB, CT, 6);
+    cout << "Kruskal算法结果：" << endl;
     PrintArray(CT, 6, 0, 0);
 
     return 0;

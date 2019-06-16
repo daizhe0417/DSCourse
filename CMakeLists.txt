@@ -109,4 +109,4 @@ add_executable(hm2-4 homework/hm2-4.cpp)
 ###################################
 ############## 实验 ################
 ###################################
-#add_executable(expr1 expr/aa.cpp)
+add_executable(expr expr/aa.cpp)

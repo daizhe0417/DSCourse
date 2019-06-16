@@ -12,11 +12,11 @@ void InitMatrix(adjmatrix GA, int k) {
     for (i = 0; i < MaxVertexNum; i++) {
         for (j = 0; j < MaxVertexNum; j++) {
             if (i == j) {
-                GA[i][j] = 0;
+                GA[i][j] = 0;           // 对角线位置
             } else if (k) {
-                GA[i][j] = MaxValue;
+                GA[i][j] = MaxValue;    // 有权图，默认为极大值
             } else {
-                GA[i][j] = 0;
+                GA[i][j] = 0;           // 无权图，默认为0
             }
         }
     }
@@ -32,33 +32,34 @@ void CreateMatrix(adjmatrix GA, int n, char *s, int k1, int k2) {
     char c1, c2, c3;
     int i, j;
     WeightType w;
-    sin >> c1;
-    if (k1 == 0 && k2 == 0)
+    //char *s = "((0,1),(0,2),(0,3),(0,4),(1,4),(2,4),(2,5),(3,5),(4,5))";
+    sin >> c1;                                      // 读第一个符号，{
+    if (k1 == 0 && k2 == 0)                         // 无向无权图
         do {
-            sin >> c1 >> i >> c2 >> j >> c3;
+            sin >> c1 >> i >> c2 >> j >> c3;        // 一次读5个字符，(i,j)
             GA[i][j] = GA[j][i] = 1;
-            sin >> c1;
+            sin >> c1;                              // 再读一个字符，可能是,或}
             if (c1 == '}') break;
         } while (1);
-    else if (k1 == 0 && k2 != 0)
+    else if (k1 == 0 && k2 != 0)                    // 无向有权图
         do {
-            sin >> c1 >> i >> c2 >> j >> c3 >> w;
+            sin >> c1 >> i >> c2 >> j >> c3 >> w;   // 一次读6个字符，(i,j)w
             GA[i][j] = GA[j][i] = w;
-            sin >> c1;
+            sin >> c1;                              // 再读一个字符，可能是,或}
             if (c1 == '}') break;
         } while (1);
-    else if (k1 != 0 && k2 == 0)
+    else if (k1 != 0 && k2 == 0)                    // 有向无权图
         do {
-            sin >> c1 >> i >> c2 >> j >> c3;
+            sin >> c1 >> i >> c2 >> j >> c3;        // 一次读5个字符，(i,j)
             GA[i][j] = 1;
-            sin >> c1;
+            sin >> c1;                              // 再读一个字符，可能是,或}
             if (c1 == '}') break;
         } while (1);
-    else if (k1 != 0 && k2 != 0)
+    else if (k1 != 0 && k2 != 0)                    // 有向有权图
         do {
-            sin >> c1 >> i >> c2 >> j >> c3 >> w;
+            sin >> c1 >> i >> c2 >> j >> c3 >> w;   // 一次读6个字符，(i,j)w
             GA[i][j] = w;
-            sin >> c1;
+            sin >> c1;                              // 再读一个字符，可能是,或}
             if (c1 == '}') break;
         } while (1);
 }
@@ -91,7 +92,7 @@ void PrintMatrix(adjmatrix GA, int n, int k1, int k2) {
     }
     cout << '}' << endl;
 }
-
+// 输出图的二元组表示，结点值方式
 void PrintMatrix(adjmatrix GA, vexlist vx, int n, int k1, int k2) {
     // k1=0无向图，k1!=0有向图
     // k2=0无权图，k2!=0有权图
