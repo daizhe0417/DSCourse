@@ -27,9 +27,21 @@
 	* Ch3/Ch1-5.cpp：栈的应用——运算表达式求值
 	* Ch3/Ch1-6.cpp：栈与递归——递归方法计算阶乘
 	* Ch3/Ch1-7.cpp：栈与递归——汉诺塔
-
+* 第四章
+    * Ch4/Ch4-1.cpp：二叉树-链接存储
+    * Ch4/Ch4-2.cpp：二叉搜索树
+    * Ch4/Ch4-3.cpp：堆
+    * Ch4/Ch4-4.cpp：哈夫曼树
+* 第五章
+    * 图的存储——邻接矩阵：   Ch5/Ch5-1.h Ch5/Ch5-1.cpp)
+    * 图的存储——邻接表：     Ch5/Ch5-2.cpp Ch5/Ch5-2.h)
+    * 图的存储——边集数组：   Ch5/Ch5-3.cpp Ch5/Ch5-3.h)
+    * 图的遍历：            Ch5/Ch5-4.cpp Ch5/Ch5-1.h Ch5/Ch5-2.h Ch5/Ch5-4.h)
+    * 图的最小生成树：       Ch5/Ch5-5.cpp Ch5/Ch5-1.h Ch5/Ch5-3.h)
+    * 最短路径：            Ch5/Ch5-6.cpp Ch5/Ch5-1.h Ch5/Ch5-3.h)
 ## 课件
 lecture目录下
+数据结构.png：整体思维导图
 
 ## 作业
 homework目录下
